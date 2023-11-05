@@ -8,3 +8,34 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/*https://stackoverflow.com/questions/57011736/how-to-get-rid-of-the-x-on-the-search-bar*/
+/* clears the 'X' from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.card-padding {
+  padding: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .card-padding {
+    padding: 2rem;
+  }
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
