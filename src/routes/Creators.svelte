@@ -20,10 +20,10 @@
     </div>
     <div class="flex w-full gap-4">
       {#if $screenSize === "xl"}
-        <CreatorTable creators={Array.from(Array(5).keys(), (x) => x + 1)} />
-        <CreatorTable creators={Array.from(Array(5).keys(), (x) => x + 6)} />
+        <CreatorTable creators={Array.from(Array(3).keys(), (x) => x + 1)} />
+        <CreatorTable creators={Array.from(Array(3).keys(), (x) => x + 4)} />
       {:else}
-        <CreatorTable creators={Array.from(Array(10).keys(), (x) => x + 1)} />
+        <CreatorTable creators={Array.from(Array(6).keys(), (x) => x + 1)} />
       {/if}
     </div>
     <a

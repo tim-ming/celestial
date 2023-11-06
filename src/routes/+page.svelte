@@ -3,6 +3,7 @@
   import Header from "./Header.svelte";
   import Discover from "./Discover.svelte";
   import Creators from "./Creators.svelte";
+  import Recent from "./Recent.svelte";
 </script>
 
 <div
@@ -12,4 +13,5 @@
   <Hero />
   <Discover />
   <Creators />
+  <Recent />
 </div>
