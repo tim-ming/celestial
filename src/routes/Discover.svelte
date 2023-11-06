@@ -1,3 +1,12 @@
+<script lang="ts">
+  import { screenSize } from "$lib/stores";
+
+  // request for data in the future. Cons: it keeps requesting though.
+  function getArray(x: number) {
+    return Array(x);
+  }
+</script>
+
 <section
   class="flex flex-col gap-4 py-10 w-full"
   style="background: rgb(27,22,54);
@@ -14,13 +23,33 @@
       <h3 class="text-slate-300">Upcoming hottest drops.</h3>
     </div>
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
     >
-      {#each Array(10) as _, i}
-        <div
-          class="flex aspect-[4/5] border border-slate-500 rounded-lg w-full"
-        />
-      {/each}
+      {#if $screenSize === "xl"}
+        {#each getArray(10) as _, i}
+          <div
+            class="flex aspect-[4/5] border border-slate-500 rounded-lg w-full"
+          />
+        {/each}
+      {:else if $screenSize === "lg"}
+        {#each getArray(8) as _, i}
+          <div
+            class="flex aspect-[4/5] border border-slate-500 rounded-lg w-full"
+          />
+        {/each}
+      {:else if $screenSize === "md"}
+        {#each getArray(6) as _, i}
+          <div
+            class="flex aspect-[4/5] border border-slate-500 rounded-lg w-full"
+          />
+        {/each}
+      {:else}
+        {#each getArray(4) as _, i}
+          <div
+            class="flex aspect-[4/5] border border-slate-500 rounded-lg w-full"
+          />
+        {/each}
+      {/if}
     </div>
     <a
       href="/marketplace"

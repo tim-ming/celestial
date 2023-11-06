@@ -1,4 +1,5 @@
 <script>
+  import { screenSize } from "$lib/stores";
   import CreatorTable from "./CreatorTable.svelte";
 </script>
 
@@ -18,8 +19,12 @@
       <h3 class="text-slate-300">Surf in the hype of top-emerging creators.</h3>
     </div>
     <div class="flex w-full gap-4">
-      <CreatorTable creators={Array.from(Array(10).keys(), (x) => x + 1)} />
-      <!-- <CreatorTable creators={Array.from(Array(10).keys(), (x) => x + 1)} /> -->
+      {#if $screenSize === "xl"}
+        <CreatorTable creators={Array.from(Array(5).keys(), (x) => x + 1)} />
+        <CreatorTable creators={Array.from(Array(5).keys(), (x) => x + 6)} />
+      {:else}
+        <CreatorTable creators={Array.from(Array(10).keys(), (x) => x + 1)} />
+      {/if}
     </div>
     <a
       href="/marketplace"
