@@ -1,11 +1,12 @@
 <script lang="ts">
   export let creators: any[];
+  export let title: string;
 </script>
 
 <div class="flex flex-col w-full gap-2">
   <div class="flex flex-col gap-1">
     <h2 class="text-2xl font-semibold text-white tracking-tight">
-      Recently listed.
+      {title}
     </h2>
   </div>
   <span class="w-full bg-slate-200 bg-opacity-10 h-px" />
@@ -24,8 +25,9 @@
       <span class="basis-20">Time</span>
     </div>
     {#each creators as creator, i}
-      <div
-        class={`flex ${
+      <a
+        href=""
+        class={`flex hover:brightness-[1.2] ${
           i % 2 == 0
             ? "bg-slate-600 bg-opacity-[0.15]"
             : "bg-slate-800 bg-opacity-10"
@@ -42,7 +44,9 @@
           flex flex-col justify-center
           [&>*]:overflow-hidden [&>*]:whitespace-nowrap [&>*]:text-ellipsis min-w-0 [&>*]:min-w-0"
           >
-            <p class="font-medium text-slate-200">Emerald</p>
+            <a href="" class=" hover:underline font-medium text-slate-200"
+              >Emerald</a
+            >
             <p class="text-sm text-slate-400">Premium Ore</p>
           </div>
         </div>
@@ -56,7 +60,7 @@
         >
           1hr. ago
         </div>
-      </div>
+      </a>
     {/each}
   </div>
 </div>

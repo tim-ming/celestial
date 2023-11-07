@@ -3,11 +3,11 @@
   let searchFocus = false;
 </script>
 
-<header class="absolute z-[999] w-full">
+<header class="fixed z-[999] w-full">
   <nav
     class="relative flex justify-between items-center w-full gap-4 h-20 py-2"
   >
-    <ul class="flex h-full gap-6 lg:gap-10 items-center text-white">
+    <ul class="w-full flex h-full gap-6 lg:gap-10 items-center text-white">
       <a class="flex h-full shrink-0" href="/">
         <img src="/images/icon.png" alt="logo" />
       </a>
@@ -17,7 +17,8 @@
       <div
         class={`${
           searchFocus ? "outline-slate-400" : "outline-black"
-        } relative outline-1 outline transition-[outline] ease-out duration-300 flex items-center bg-opacity-10 px-3 gap-3 rounded-lg bg-sky-200 backdrop-blur-xl text-sm text-white`}
+        } max-w-xs w-full relative outline-1 outline transition-[outline] ease-out duration-300 flex items-center bg-opacity-10 
+        p-3 gap-3 rounded-lg bg-sky-200 backdrop-blur-xl text-sm text-white`}
       >
         <svg
           width="20"
@@ -31,7 +32,7 @@
           /></svg
         >
         <input
-          class="w-full bg-transparent h-10 outline-none focus:outline-none"
+          class="w-full bg-transparent outline-none focus:outline-none"
           type="search"
           name="search"
           placeholder="Astronauts"
@@ -41,8 +42,24 @@
         />
       </div>
     </ul>
+
     <ul class="flex h-full gap-4 items-center text-white">
-      <li><a href="/">Wallet</a></li>
+      <li>
+        <a class="relative flex items-center justify-center p-2 gap-1" href="/"
+          ><div
+            class="absolute w-full h-full bg-gradient-to-r z-[999] backdrop-blur-xl from-white to-violet-200"
+          />
+          <svg
+            width={20}
+            height={20}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            ><path
+              d="M18.0049 7H21.0049C21.5572 7 22.0049 7.44772 22.0049 8V20C22.0049 20.5523 21.5572 21 21.0049 21H3.00488C2.4526 21 2.00488 20.5523 2.00488 20V4C2.00488 3.44772 2.4526 3 3.00488 3H18.0049V7ZM4.00488 9V19H20.0049V9H4.00488ZM4.00488 5V7H16.0049V5H4.00488ZM15.0049 13H18.0049V15H15.0049V13Z"
+            /></svg
+          ><span>Wallet</span></a
+        >
+      </li>
     </ul>
   </nav>
 </header>
