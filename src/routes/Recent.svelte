@@ -14,7 +14,7 @@
   background: radial-gradient(circle, rgba(27,22,54,1) 0%, rgba(0,0,0,1) 85%);"
 >
   <div
-    class="border flex gap-12 border-slate-700 bg-black bg-opacity-40 backdrop-blur-xl rounded-lg card-padding"
+    class="border flex flex-col lg:flex-row gap-12 border-slate-700 bg-black bg-opacity-40 backdrop-blur-xl rounded-lg card-padding"
     style="box-shadow: 0 0 2rem rgba(255, 255, 255, 0.1);"
   >
     <Listings

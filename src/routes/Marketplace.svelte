@@ -16,7 +16,7 @@
     >
       <div class="flex flex-col w-full gap-2">
         <h2 class="text-4xl font-semibold tracking-tight">→ Marketplace.</h2>
-        <h3 class="max-w-[60%] text-slate-600">
+        <h3 class="max-w-[60%] text-slate-700">
           Buy/Sell/Trade in an ever-expanding market of space-collectibles.
         </h3>
       </div>
