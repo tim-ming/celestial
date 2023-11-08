@@ -3,7 +3,7 @@
   let searchFocus = false;
 </script>
 
-<header class="fixed z-[999] w-full">
+<header class="fixed z-[999] bg-black/80 backdrop-blur-sm w-full">
   <nav
     class="relative flex justify-between items-center w-full gap-4 h-20 py-2"
   >
@@ -12,13 +12,13 @@
         <img src="/images/icon.png" alt="logo" />
       </a>
       <li><a href="/">Marketplace</a></li>
-      <li><a href="/">About</a></li>
+      <li><a href="/">Drops</a></li>
       <span class="h-[60%] w-px bg-white opacity-50" />
       <div
         class={`${
           searchFocus ? "outline-slate-400" : "outline-black"
-        } max-w-xs w-full relative outline-1 outline transition-[outline] ease-out duration-300 flex items-center bg-opacity-10 
-        p-3 gap-3 rounded-lg bg-sky-200 backdrop-blur-xl text-sm text-white`}
+        } max-w-xs w-full relative outline-1 outline transition-[outline] ease-out duration-300 flex items-center bg-opacity-[0.15]
+        p-3 gap-3 rounded-lg bg-sky-100 backdrop-blur-xl text-sm text-white`}
       >
         <svg
           width="20"
@@ -45,19 +45,24 @@
 
     <ul class="flex h-full gap-4 items-center text-white">
       <li>
-        <a class="relative flex items-center justify-center p-2 gap-1" href="/"
+        <a
+          class="relative text-slate-800 flex items-center justify-center py-3 px-4"
+          href="/"
           ><div
-            class="absolute w-full h-full bg-gradient-to-r z-[999] backdrop-blur-xl from-white to-violet-200"
+            class="absolute w-full h-full rounded-md bg-gradient-to-r backdrop-blur-xl from-white/90 to-violet-200/90"
           />
-          <svg
-            width={20}
-            height={20}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            ><path
-              d="M18.0049 7H21.0049C21.5572 7 22.0049 7.44772 22.0049 8V20C22.0049 20.5523 21.5572 21 21.0049 21H3.00488C2.4526 21 2.00488 20.5523 2.00488 20V4C2.00488 3.44772 2.4526 3 3.00488 3H18.0049V7ZM4.00488 9V19H20.0049V9H4.00488ZM4.00488 5V7H16.0049V5H4.00488ZM15.0049 13H18.0049V15H15.0049V13Z"
-            /></svg
-          ><span>Wallet</span></a
+          <div class="relative items-center justify-center flex gap-2">
+            <svg
+              width={24}
+              height={24}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              stroke-width="1"
+              ><path
+                d="M18.0049 7H21.0049C21.5572 7 22.0049 7.44772 22.0049 8V20C22.0049 20.5523 21.5572 21 21.0049 21H3.00488C2.4526 21 2.00488 20.5523 2.00488 20V4C2.00488 3.44772 2.4526 3 3.00488 3H18.0049V7ZM4.00488 9V19H20.0049V9H4.00488ZM4.00488 5V7H16.0049V5H4.00488ZM15.0049 13H18.0049V15H15.0049V13Z"
+              /></svg
+            ><span class=" font-medium">Wallet</span>
+          </div></a
         >
       </li>
     </ul>

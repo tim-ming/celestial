@@ -1,10 +1,10 @@
 <script>
   import { screenSize } from "$lib/stores";
-  import CreatorTable from "./CreatorTable.svelte";
+  import CreatorTable from "../lib/components/CreatorTable.svelte";
 </script>
 
 <section
-  class="flex flex-col gap-4 py-10 w-full"
+  class="flex flex-col gap-4 w-full"
   style="background: rgb(54,22,46);
   background: radial-gradient(circle, rgba(54,22,46,1) 0%, rgba(0,0,0,1) 86%);"
 >

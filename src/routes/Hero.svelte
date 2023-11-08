@@ -53,7 +53,7 @@
         class="relative w-64 backdrop-blur-xl py-4 flex items-center justify-center font-medium text-lg rounded-md overflow-hidden shadow-gray-400 hover:shadow-gray-400 hover:shadow-2xl transition duration-1000 ease-in-out"
       >
         <div
-          class="absolute w-full h-full bg-gradient-to-r opacity-70 backdrop-blur-xl from-white to-violet-200"
+          class="absolute w-full h-full bg-gradient-to-r backdrop-blur-xl from-white/80 to-violet-200/80"
         />
         <p class="relative">Explore NFTs</p>
       </a>

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { screenSize } from "$lib/stores";
-  import Listings from "./Listings.svelte";
+  import Listings from "$lib/components/Listings.svelte";
 
   // request for data in the future. Cons: it keeps requesting though.
   function getArray(x: number) {
@@ -9,7 +9,7 @@
 </script>
 
 <section
-  class="flex flex-col gap-4 py-10 w-full"
+  class="flex flex-col gap-4 w-full"
   style="background: rgb(27,22,54);
   background: radial-gradient(circle, rgba(27,22,54,1) 0%, rgba(0,0,0,1) 85%);"
 >
