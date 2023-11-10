@@ -1,6 +1,6 @@
 <script>
   import { screenSize } from "$lib/stores";
-  import CreatorTable from "../lib/components/CreatorTable.svelte";
+  import CreatorTable from "$lib/components/CreatorTable.svelte";
 </script>
 
 <section

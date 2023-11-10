@@ -3,6 +3,28 @@
   import { screenSize } from "$lib/stores";
   let searchFocus = false;
   let menuOpen = false;
+  const routes = [
+    {
+      name: "Marketplace",
+      path: "/marketplace",
+      color: "bg-blue-100",
+    },
+    {
+      name: "Creators",
+      path: "/creators",
+      color: "bg-violet-100",
+    },
+    {
+      name: "Drops",
+      path: "/drops",
+      color: "bg-pink-100",
+    },
+    {
+      name: "Rewards",
+      path: "/rewards",
+      color: "bg-cyan-100",
+    },
+  ];
 </script>
 
 <header
@@ -17,14 +39,17 @@
       <button
         aria-label="menu"
         class="flex lg:hidden items-center gap-2 p-2 hover:bg-slate-200/20 rounded-md transition duration-300 ease-out"
-        on:click={() => (menuOpen = !menuOpen)}
-        ><svg
+        on:click={() => (menuOpen = true)}
+      >
+        <svg
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           width={24}
           height={24}
-          ><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z" /></svg
+          ><path
+            d="M7.5 11.5C5.01472 11.5 3 9.48528 3 7C3 4.51472 5.01472 2.5 7.5 2.5C9.98528 2.5 12 4.51472 12 7C12 9.48528 9.98528 11.5 7.5 11.5ZM7.5 21.5C5.01472 21.5 3 19.4853 3 17C3 14.5147 5.01472 12.5 7.5 12.5C9.98528 12.5 12 14.5147 12 17C12 19.4853 9.98528 21.5 7.5 21.5ZM17.5 11.5C15.0147 11.5 13 9.48528 13 7C13 4.51472 15.0147 2.5 17.5 2.5C19.9853 2.5 22 4.51472 22 7C22 9.48528 19.9853 11.5 17.5 11.5ZM17.5 21.5C15.0147 21.5 13 19.4853 13 17C13 14.5147 15.0147 12.5 17.5 12.5C19.9853 12.5 22 14.5147 22 17C22 19.4853 19.9853 21.5 17.5 21.5ZM7.5 9.5C8.88071 9.5 10 8.38071 10 7C10 5.61929 8.88071 4.5 7.5 4.5C6.11929 4.5 5 5.61929 5 7C5 8.38071 6.11929 9.5 7.5 9.5ZM7.5 19.5C8.88071 19.5 10 18.3807 10 17C10 15.6193 8.88071 14.5 7.5 14.5C6.11929 14.5 5 15.6193 5 17C5 18.3807 6.11929 19.5 7.5 19.5ZM17.5 9.5C18.8807 9.5 20 8.38071 20 7C20 5.61929 18.8807 4.5 17.5 4.5C16.1193 4.5 15 5.61929 15 7C15 8.38071 16.1193 9.5 17.5 9.5ZM17.5 19.5C18.8807 19.5 20 18.3807 20 17C20 15.6193 18.8807 14.5 17.5 14.5C16.1193 14.5 15 15.6193 15 17C15 18.3807 16.1193 19.5 17.5 19.5Z"
+          /></svg
         ></button
       >
       <a class="flex items-center h-full shrink-0" href="/">
@@ -87,7 +112,7 @@
       </li>
     </ul>
   </nav>
-  <aside
+  <!-- <aside
     class={`absolute text-sm h-screen w-48 transition ease-out ${
       menuOpen ? "translate-x-[-12.5rem]" : "translate-x-0"
     } lg:translate-x-0 left-0 top-20 !p-3 bg-black/95 border-r-[1px] border-violet-200/40`}
@@ -162,5 +187,57 @@
         </li>
       </ul>
     </nav>
-  </aside>
+  </aside> -->
 </header>
+<div
+  class={`fixed z-[99999999] flex items-center 
+h-screen w-full left-0 top-0 ${menuOpen ? "visible" : "invisible"}`}
+>
+  <div
+    class={`absolute top-0 left-0 bg-black bg-opacity-70 backdrop-blur-sm w-screen h-screen -z-[1] transition-all duration-300 ease-out ${
+      menuOpen ? "visible opacity-100" : "invisible opacity-0"
+    }`}
+    on:click={() => (menuOpen = false)}
+  />
+
+  <div
+    class={`h-[calc(100vh-3rem)] text-slate-200 p-3 flex flex-col bg-zinc-800 bg-opacity-95 left-0 rounded-xl gap-2
+    transition-all duration-300 ease-out ${
+      menuOpen
+        ? "visible translate-x-0 opacity-100"
+        : "invisible -translate-x-12 opacity-0"
+    }`}
+  >
+    <div class="flex pointer-events-none">
+      <button
+        class="flex pointer-events-auto"
+        aria-label="close menu"
+        on:click={() => (menuOpen = false)}
+      >
+        <svg
+          class="  hover:bg-sky-200/10 duration-300 ease-out rounded-xl opacity-80 p-2"
+          width={48}
+          height={48}
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          ><path
+            d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z"
+          /></svg
+        >
+      </button>
+    </div>
+    {#each routes as route}
+      <a
+        href={route.path}
+        class={`rounded-2xl transition ease-out duration-300 hover:bg-sky-200/10 flex items-end w-full`}
+      >
+        <p
+          class="text-3xl transition ease-out duration-300 font-medium w-full p-4 pr-20 hover:translate-x-3 shadow-slate-200/30 hover:[text-shadow:_0_0_1rem_var(--tw-shadow-color)]"
+        >
+          {route.name}
+        </p>
+      </a>
+    {/each}
+  </div>
+</div>
