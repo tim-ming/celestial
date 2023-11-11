@@ -20,7 +20,7 @@
         <h1
           class="text-5xl font-semibold bg-gradient-to-b from-white to-gray-400 text-transparent bg-clip-text"
         >
-          NFTs
+          items
         </h1>
         <h1
           class="text-5xl font-semibold bg-gradient-to-b from-white to-gray-400 text-transparent bg-clip-text"
@@ -35,7 +35,7 @@
         <h1
           class="text-5xl font-semibold bg-gradient-to-b from-white to-gray-400 text-transparent bg-clip-text"
         >
-          endless
+          infinite
         </h1>
         <h1
           class="text-5xl font-semibold bg-gradient-to-b from-white to-gray-400 text-transparent bg-clip-text"
@@ -44,7 +44,8 @@
         </h1>
       </div>
       <h2 class="text-slate-300 font-medium text-center">
-        Thrift through your universe of Digital Collectibles at lowest prices.
+        Thrift through the universe of imaginary space-themed Digital
+        Collectibles.
       </h2>
     </div>
     <div class="flex gap-4">
@@ -55,7 +56,7 @@
         <div
           class="absolute w-full h-full bg-gradient-to-r backdrop-blur-xl from-white/80 to-violet-200/80"
         />
-        <p class="relative">Explore NFTs</p>
+        <p class="relative">Explore space</p>
       </a>
     </div>
   </div>

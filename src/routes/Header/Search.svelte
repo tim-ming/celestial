@@ -8,7 +8,7 @@
     if (typeof searchInput != "undefined") {
       if (searchOpen) {
         // no delay can't focus, so we wait a bit
-        sleep(50).then(() => searchInput.focus());
+        sleep(100).then(() => searchInput.focus());
       } else {
         searchInput.blur();
       }
