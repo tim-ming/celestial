@@ -2,7 +2,8 @@
   import { page } from "$app/stores";
   import { screenSize } from "$lib/stores";
   import type { Routes } from "$lib/types";
-  import Search from "./SearchButton.svelte";
+  import Search from "./Search.svelte";
+  import SearchButton from "./SearchButton.svelte";
   export let routes: Routes[];
   let searchFocus = false;
   let menuOpen = false;
@@ -14,6 +15,8 @@
     }
   }
 </script>
+
+<Search {searchFocus} />
 
 <header
   class="fixed z-[9999] bg-black/80 backdrop-blur-sm w-full border-b-[1px] border-violet-200/40"
@@ -36,7 +39,7 @@
       class="flex items-center justify-center lg:justify-start w-full h-full gap-6"
     >
       {#if $screenSize !== "xs"}
-        <Search />
+        <SearchButton bind:searchFocus />
       {/if}
       <ul
         class="hidden lg:flex h-full gap-2 items-center text-slate-200 opacity-80"
@@ -201,7 +204,7 @@ h-screen w-full right-0 top-0 ${menuOpen ? "visible" : "invisible"}`}
       </a>
       <span class="h-px w-full bg-slate-200 opacity-20" />
       <div class="flex items-center justify-center gap-4 p-4">
-        <a href="">
+        <a href="https://github.com/timming-au/celestial">
           <svg
             fill="currentColor"
             width={28}
