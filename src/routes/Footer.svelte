@@ -7,8 +7,8 @@
     >
       <div class="col-span-1 flex flex-col items-center gap-4">
         <picture class="max-w-[12rem]">
-          <source srcset="images/icon.png" />
-          <img src="icon.png" alt="company logo" />
+          <source srcset="images/icon-full.webp" />
+          <img src="icon-full.png" alt="company logo" />
         </picture>
         <p>Total RBS: 102300.98</p>
       </div>
