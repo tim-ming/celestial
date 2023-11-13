@@ -2,6 +2,7 @@
   import { user } from "$lib/backend/user";
   import aliasPairs from "$lib/aliasPairs.json";
   import { isValidEmail } from "$lib/helpers";
+  import { goto } from "$app/navigation";
   let username = "";
   let email = "";
   let password = "";
@@ -39,7 +40,9 @@
 
     user
       .register(username, email, password)
-      .then(console.log)
+      .then((res) => {
+        goto("/");
+      })
       .catch(console.log);
   }
 </script>
@@ -129,7 +132,7 @@
   <button
     type="button"
     class="w-full text-slate-900 text-lg font-medium duration-300 transition ease-out bg-violet-300/80 hover:bg-violet-300/100 p-3 rounded-lg"
-    on:click={createWallet}>Login</button
+    on:click={createWallet}>Create wallet</button
   >
   <button class="text-purple-400 text-sm" on:click={() => setLogin(true)}
     >Already have a wallet?</button

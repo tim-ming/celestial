@@ -1,11 +1,17 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import { user } from "$lib/backend/user";
+  goto;
   let email = "";
   let password = "";
   export let setLogin: (login: boolean) => void;
-
-  $: {
-    console.log($user);
+  function login() {
+    user
+      .login(email, password)
+      .then((res) => {
+        goto("/");
+      })
+      .catch(console.log);
   }
 </script>
 
@@ -36,7 +42,7 @@
 <button
   type="button"
   class="w-full text-slate-900 text-lg font-medium duration-300 transition ease-out bg-violet-300/80 hover:bg-violet-300/100 p-3 rounded-lg"
-  on:click={() => user.login(email, password)}>Login</button
+  on:click={login}>Login</button
 >
 <button class="text-purple-400 text-sm" on:click={() => setLogin(false)}
   >Don't have a wallet?</button

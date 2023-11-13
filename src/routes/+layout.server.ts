@@ -1,6 +1,5 @@
-import { Client } from "appwrite";
-const client = new Client();
+import type { LayoutServerLoad } from "./$types";
 
-client
-  .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject("654c738745df08a1e5a9");
+export const load: LayoutServerLoad = ({ fetch }) => {
+  // fetch("https://65521515a302b69e083f.appwrite.global/").then(console.log);
+};

@@ -1,7 +1,6 @@
 <script lang="ts">
   import Create from "./Create.svelte";
   import Login from "./Login.svelte";
-
   let isLogin = true;
 
   function setLogin(login: boolean) {
@@ -62,10 +61,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  form {
-    display: grid;
-    gap: 0.25rem;
-  }
-</style>
