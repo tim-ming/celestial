@@ -1,4 +1,6 @@
-<footer class="w-full">
+<footer
+  class="w-full shadow-[0_-1rem_1rem_1rem_var(--tw-shadow-colored)] shadow-black bg-black"
+>
   <div
     class="pt-14 pb-10 w-full text-slate-200 rounded-lg gap-8 border-t-[1px] border-x-[1px] border-slate-700 bg-black bg-opacity-40"
   >

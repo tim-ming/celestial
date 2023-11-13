@@ -1,6 +1,6 @@
 import { writable, type Writable } from "svelte/store";
 import { Databases, ID, Query, type Models } from "appwrite";
-import { databases } from "$lib/appwrite";
+import { databases } from "$lib/backend/appwrite";
 
 export const IDEAS_DATABASE_ID = "6508783c5dc784d544dd"; // Replace with your database ID
 export const IDEAS_COLLECTION_ID = "65087840ab307cb06883"; // Replace with your collection ID

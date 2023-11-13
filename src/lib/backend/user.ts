@@ -1,28 +1,25 @@
 import { writable, type Writable } from "svelte/store";
-import { ID, type Models } from "appwrite";
-import { goto } from "$app/navigation";
-import { account } from "$lib/appwrite";
+import type { Models } from "appwrite";
+import { account } from "$lib/backend/appwrite";
 
 const store: Writable<null | Models.User<Models.Preferences>> = writable(null);
 
 async function init() {
   try {
     store.set(await account.get());
-    console.log(store);
   } catch (e) {
     store.set(null);
   }
 }
 
-async function register(email: string, password: string) {
-  await account.create(ID.unique(), email, password);
+async function register(id: string, email: string, password: string) {
+  account.create(id, email, password).then(() => {});
   await login(email, password);
 }
 
 async function login(email: string, password: string) {
   await account.createEmailSession(email, password);
   await init();
-  goto("/"); // Redirect to home page after login
 }
 
 async function logout() {

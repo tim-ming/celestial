@@ -1,6 +1,4 @@
 <script lang="ts">
-  import HeroImage from "$lib/images/hero.jpg";
-  import HeroImageWebp from "$lib/images/hero.webp";
 </script>
 
 <section
