@@ -1,4 +1,4 @@
-import { writable, type Writable } from "svelte/store";
+import { derived, writable, type Writable } from "svelte/store";
 import type { Models } from "appwrite";
 import { account } from "$lib/backend/appwrite";
 
@@ -35,3 +35,8 @@ export const user = {
   logout,
   init,
 };
+
+export const userData = derived(user, ($user) => {
+  if (!$user) return null;
+  $user.$id
+})
