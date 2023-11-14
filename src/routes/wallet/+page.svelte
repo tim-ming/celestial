@@ -3,12 +3,11 @@
   import { get } from "svelte/store";
   import Auth from "./Auth.svelte";
   import Wallet from "./Wallet.svelte";
-
-  $: console.log($user);
+  import { onMount } from "svelte";
 </script>
 
 {#if $user}
-  <Wallet user={get(user)} />
+  <Wallet />
 {:else}
   <Auth />
 {/if}

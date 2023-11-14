@@ -1,7 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { user } from "$lib/backend/user";
-  goto;
   let email = "";
   let password = "";
   export let setLogin: (login: boolean) => void;

@@ -3,6 +3,8 @@
   import aliasPairs from "$lib/aliasPairs.json";
   import { isValidEmail } from "$lib/helpers";
   import { goto } from "$app/navigation";
+  import type { Credentials, UserCreateData } from "$lib/types";
+  import { DEFAULT_IMG_URL } from "$lib/backend/appwrite";
   let username = "";
   let email = "";
   let password = "";
@@ -38,9 +40,24 @@
       .value;
     const alias = `${adjective} ${noun}`;
 
+    const id = username;
+
+    const credentials: Credentials = {
+      id,
+      email,
+      password,
+    };
+    const creationDate = new Date().toISOString();
+    const userCreateData: UserCreateData = {
+      alias,
+      date_joined: creationDate,
+      date_last_active: creationDate,
+      img_url: [DEFAULT_IMG_URL],
+    };
+
     user
-      .register(username, email, password)
-      .then((res) => {
+      .register(credentials, userCreateData)
+      .then((_) => {
         goto("/");
       })
       .catch(console.log);

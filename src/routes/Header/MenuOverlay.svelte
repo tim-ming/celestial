@@ -1,8 +1,13 @@
 <script lang="ts">
+  import { afterNavigate } from "$app/navigation";
   import type { Routes } from "$lib/types";
 
   export let menuOpen: boolean;
   export let routes: Routes[];
+
+  afterNavigate(() => {
+    menuOpen = false;
+  });
 </script>
 
 <div

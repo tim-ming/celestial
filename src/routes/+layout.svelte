@@ -1,12 +1,10 @@
 <script lang="ts">
   import "./styles.css";
-  import { screen } from "$lib/stores";
   import Header from "./Header/Component.svelte";
   import Footer from "./Footer/Component.svelte";
-  let screenX = 0;
-  let screenY = 0;
-  $: screen.set({ x: screenX, y: screenY });
   import type { Routes } from "$lib/types";
+  import Init from "./Init.svelte";
+
   const ROUTES: Routes[] = [
     {
       name: "Marketplace",
@@ -27,6 +25,7 @@
   ];
 </script>
 
+<Init />
 <div class="app">
   <main>
     <div class="flex flex-col items-center bg-black">
@@ -44,4 +43,3 @@
     </div>
   </main>
 </div>
-<svelte:window bind:innerWidth={screenX} bind:innerHeight={screenY} />

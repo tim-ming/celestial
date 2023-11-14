@@ -4,6 +4,7 @@
   import MenuOverlay from "./MenuOverlay.svelte";
   import Search from "./Search.svelte";
   import SearchButton from "./SearchButton.svelte";
+  import { userData } from "$lib/backend/userData";
   export let routes: Routes[];
   let menuOpen = false;
   let searchOpen = false;
@@ -117,7 +118,9 @@
             ><div
               class="absolute w-full h-full rounded-md bg-gradient-to-r backdrop-blur-xl from-white/90 to-violet-200/90"
             />
-            <div class="relative items-center justify-center flex gap-2">
+            <div
+              class="relative items-center justify-center flex gap-2 whitespace-nowrap"
+            >
               <svg
                 width={24}
                 height={24}
@@ -127,7 +130,18 @@
                 ><path
                   d="M18.0049 7H21.0049C21.5572 7 22.0049 7.44772 22.0049 8V20C22.0049 20.5523 21.5572 21 21.0049 21H3.00488C2.4526 21 2.00488 20.5523 2.00488 20V4C2.00488 3.44772 2.4526 3 3.00488 3H18.0049V7ZM4.00488 9V19H20.0049V9H4.00488ZM4.00488 5V7H16.0049V5H4.00488ZM15.0049 13H18.0049V15H15.0049V13Z"
                 /></svg
-              ><span class=" font-medium">+Wallet</span>
+              >
+              {#await $userData}
+                <span class="animate-pulse">Loading...</span>
+              {:then data}
+                {#if data}
+                  <span class="font-medium">{data.total_rbs + " RBS"}</span>
+                {:else}
+                  <span>+Wallet</span>
+                {/if}
+              {:catch error}
+                <span class="text-red-400">+Wallet</span>
+              {/await}
             </div></a
           >
         {/if}
