@@ -30,12 +30,12 @@
   <main>
     <div class="flex flex-col items-center bg-black">
       <div
-        class="[&>*]:px-4 gap-10 sm:[&>*]:px-8 [&>*]:max-w-[100rem] w-full flex flex-col items-center bg-black"
+        class="[&>*]:px-2 gap-10 sm:[&>*]:px-6 [&>*]:max-w-[100rem] w-full flex flex-col items-center bg-black"
       >
         <Header routes={ROUTES} />
       </div>
       <div
-        class="[&>*]:px-4 gap-10 [&>*]:max-w-[calc(100rem)] w-full sm:[&>*]:px-8 flex flex-col items-center bg-black"
+        class="[&>*]:px-4 [&>*>*]:rounded-xl [&>*>*]:card-padding gap-10 [&>*]:max-w-[calc(100rem)] w-full sm:[&>*]:px-8 flex flex-col items-center bg-black"
       >
         <slot />
         <Footer />

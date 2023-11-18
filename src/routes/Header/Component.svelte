@@ -27,12 +27,11 @@
 
 <Search {searchOpen} {setSearchOpen} />
 
-<header
-  class="fixed z-[9999] bg-black/80 backdrop-blur-sm w-full border-b-[1px] border-violet-200/40"
->
+<header class="fixed z-[9999] pt-2 w-full flex">
   <nav
-    class="relative z-[1] flex justify-between items-center w-full gap-8 h-20 py-2"
+    class="relative z-[1] px-6 bg-[#25252c]/95 backdrop-blur-md rounded-2xl flex justify-between items-center w-full gap-8 h-16 py-2"
   >
+    <!-- First group of elements, Company Icon -->
     <div
       class="flex shrink-0 h-full gap-6 lg:gap-10 items-center text-slate-300"
     >
@@ -48,6 +47,8 @@
         {/if}
       </a>
     </div>
+
+    <!-- Second group of elements, Route elements -->
     <div
       class="sm:flex hidden items-center lg:justify-start w-full h-full gap-6"
     >
@@ -60,16 +61,20 @@
         {#each routes as route}
           <li>
             <a
-              class="relative flex items-center justify-center py-3 px-4"
+              class="relative flex items-center hover:bg-slate-200/20 [&>*]:hover:brightness-110 [&>*]:hover:-translate-y-[2px] transition ease-out duration-150 rounded-lg justify-center py-3 px-4"
               href={route.path}
             >
-              <span class="font-medium">{route.name}</span>
+              <span class="font-medium transition ease-out duration-150"
+                >{route.name}</span
+              >
             </a>
           </li>
         {/each}
       </ul>
     </div>
-    <ul class="flex h-full gap-2 lg:gap-4 items-center text-white">
+
+    <!-- Third group of elmements -->
+    <ul class="flex h-full gap-3 lg:gap-4 items-center text-white">
       {#if $screenSize === "xs"}
         <li>
           <!-- Search button -->
@@ -113,18 +118,19 @@
         {:else}
           <!-- Wallet button -->
           <a
-            class="relative text-slate-800 flex items-center justify-center py-3 px-4"
+            class="relative text-slate-800 flex items-center justify-center py-2 px-4"
             href="/wallet"
             ><div
-              class="absolute w-full h-full rounded-md bg-gradient-to-r backdrop-blur-xl from-white/90 to-violet-200/90"
+              class="absolute w-full h-full rounded-full bg-gradient-to-r backdrop-blur-xl from-white/90 to-violet-200/90"
             />
             <div
-              class="relative items-center justify-center flex gap-2 whitespace-nowrap"
+              class="relative items-center justify-center flex gap-2 whitespace-nowrap text-gray-700"
             >
               <svg
-                width={24}
-                height={24}
+                width={20}
+                height={20}
                 xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
                 viewBox="0 0 24 24"
                 stroke-width="1"
                 ><path
@@ -147,10 +153,10 @@
         {/if}
       </li>
       <!-- Menu button -->
-      <li>
+      <li class="lg:hidden">
         <button
           aria-label="menu"
-          class="flex lg:hidden items-center gap-2 p-3 hover:bg-slate-200/20 rounded-xl transition duration-300 ease-out"
+          class="flex items-center gap-2 p-2 hover:bg-slate-200/20 rounded-xl transition duration-300 ease-out"
           on:click={() => (menuOpen = true)}
         >
           <svg

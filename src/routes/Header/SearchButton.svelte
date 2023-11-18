@@ -6,9 +6,9 @@
 <button
   aria-label="search"
   class={`${
-    searchFocus ? "outline-slate-400" : "outline-black"
-  } max-w-xs w-full relative outline-1 outline transition-[outline] ease-out duration-300 flex bg-opacity-[0.15]
-  p-4 gap-3 rounded-2xl bg-sky-100 backdrop-blur-xl text-sm text-slate-200 cursor-text items-center`}
+    searchFocus ? "outline-slate-400" : "outline-none"
+  } max-w-xs w-full relative outline-1 outline transition-[outline] ease-out duration-300 flex bg-opacity-[0.3]
+  p-3 gap-3 rounded-xl bg-black backdrop-blur-xl text-sm text-slate-200 cursor-text items-center`}
   on:click={() => searchInput.focus()}
 >
   <svg

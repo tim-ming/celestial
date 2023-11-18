@@ -25,8 +25,8 @@ async function register(credentials: Credentials, data: UserCreateData) {
     .createDocument(DATABASE_ID, USER_COLLECTION_ID, credentials.id, data, [
       Permission.write(Role.user(credentials.id)),
       Permission.read(Role.user(credentials.id)),
-      Permission.write(Role.label(ADMIN_LABEL_ID)),
-      Permission.read(Role.label(ADMIN_LABEL_ID)),
+      // Permission.write(Role.label(ADMIN_LABEL_ID)),
+      // Permission.read(Role.label(ADMIN_LABEL_ID)),
     ])
     .then(console.log)
     .catch(console.log);
